@@ -64,6 +64,7 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     optimizePackageImports: ['@heroicons/react'],
+    esmExternals: 'loose',
   },
 
   // PWA support (optional)
