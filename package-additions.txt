@@ -1,0 +1,12 @@
+# Add these dependencies to your package.json
+
+# For UUID generation (file naming)
+npm install uuid
+npm install @types/uuid
+
+# For Cloudinary (if using Cloudinary option)
+npm install cloudinary
+npm install @cloudinary/react @cloudinary/url-gen
+
+# For image optimization (optional)
+npm install sharp

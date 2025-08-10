@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ملف المغامر الشخصي - Adventure Profile
 
-## Getting Started
+موقع شخصي باللغة العربية لمحب المغامرات والسفر، مبني باستخدام Next.js و Tailwind CSS.
 
-First, run the development server:
+## المميزات
+
+- 🌍 تصميم متجاوب يدعم اللغة العربية (RTL)
+- 🎨 تصميم عصري وجذاب
+- 📱 متوافق مع جميع الأجهزة
+- ⚡ أداء سريع مع Next.js 15
+- 🎯 أقسام متكاملة: الرئيسية، عني، مغامراتي، مهاراتي، تواصل معي
+
+## التشغيل
 
 ```bash
+# تثبيت المتطلبات
+npm install
+
+# تشغيل الخادم المحلي
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+افتح [http://localhost:3000](http://localhost:3000) في المتصفح لرؤية الموقع.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## البنية
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+└── components/
+    ├── Navigation.tsx
+    ├── Hero.tsx
+    ├── About.tsx
+    ├── Adventures.tsx
+    ├── Skills.tsx
+    └── Contact.tsx
+```
 
-## Learn More
+## التخصيص
 
-To learn more about Next.js, take a look at the following resources:
+1. **المحتوى**: عدّل النصوص في ملفات المكونات
+2. **الصور**: أضف صورك في مجلد `public/`
+3. **الألوان**: عدّل الألوان في `globals.css`
+4. **الخط**: الموقع يستخدم خط Cairo للعربية
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## الصور المطلوبة
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+ضع الصور التالية في مجلد `public/`:
+- `hero-image.jpg` - صورة البطل الرئيسية
+- `adventure1.jpg` إلى `adventure6.jpg` - صور المغامرات
 
-## Deploy on Vercel
+## التقنيات المستخدمة
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Next.js 15** - إطار العمل الأساسي
+- **Tailwind CSS** - للتصميم
+- **TypeScript** - للبرمجة
+- **Heroicons** - للأيقونات
+- **Google Fonts (Cairo)** - للخط العربي
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## النشر
+
+يمكن نشر الموقع على:
+- Vercel (الأسهل)
+- Netlify
+- أي خدمة استضافة تدعم Next.js
+
+```bash
+npm run build
+npm start
+```
