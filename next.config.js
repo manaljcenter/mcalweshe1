@@ -1,3 +1,4 @@
+const path = require('path')
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Security headers
@@ -64,7 +65,6 @@ const nextConfig = {
   // Performance optimizations
   experimental: {
     optimizePackageImports: ['@heroicons/react'],
-    esmExternals: 'loose',
   },
 
   // PWA support (optional)
@@ -131,6 +131,14 @@ const nextConfig = {
 
   // Trailing slash handling
   trailingSlash: false,
+
+  // Ensure alias resolution works in all environments (e.g., Vercel)
+  webpack: (config) => {
+    config.resolve = config.resolve || {}
+    config.resolve.alias = config.resolve.alias || {}
+    config.resolve.alias['@'] = path.resolve(__dirname, 'src')
+    return config
+  },
 }
 
 module.exports = nextConfig
