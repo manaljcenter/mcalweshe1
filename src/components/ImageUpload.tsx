@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef } from 'react'
-import { PhotoIcon, TrashIcon, CheckIcon } from '@heroicons/react/24/outline'
+import { PhotoIcon, TrashIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 
 interface ImageUploadProps {

@@ -32,8 +32,9 @@ export function middleware(request: NextRequest) {
   
   // Rate limiting for admin routes
   if (request.nextUrl.pathname.startsWith('/admin')) {
-    const ip = request.ip || request.headers.get('x-forwarded-for') || 'unknown'
-    const rateLimitKey = `admin_rate_limit_${ip}`
+    const ip = request.headers.get('x-forwarded-for') || 
+              request.headers.get('x-real-ip') || 
+              'unknown'
     
     // In production, you would use Redis or a database for rate limiting
     // This is a simple in-memory example

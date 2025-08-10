@@ -49,17 +49,23 @@ export function isValidPhone(phone: string): boolean {
 }
 
 // Content validation for adventures
-export function validateAdventure(adventure: any): boolean {
+export function validateAdventure(adventure: unknown): boolean {
+  if (!adventure || typeof adventure !== 'object') {
+    return false
+  }
+  
+  const adv = adventure as Record<string, unknown>
+  
   return (
-    typeof adventure.title === 'string' &&
-    adventure.title.length > 0 &&
-    adventure.title.length <= 100 &&
-    typeof adventure.location === 'string' &&
-    adventure.location.length > 0 &&
-    typeof adventure.description === 'string' &&
-    adventure.description.length > 0 &&
-    Array.isArray(adventure.tags) &&
-    adventure.tags.every((tag: any) => typeof tag === 'string' && tag.length <= 50)
+    typeof adv.title === 'string' &&
+    adv.title.length > 0 &&
+    adv.title.length <= 100 &&
+    typeof adv.location === 'string' &&
+    adv.location.length > 0 &&
+    typeof adv.description === 'string' &&
+    adv.description.length > 0 &&
+    Array.isArray(adv.tags) &&
+    adv.tags.every((tag: unknown) => typeof tag === 'string' && tag.length <= 50)
   )
 }
 
@@ -84,18 +90,15 @@ export async function hashPassword(password: string): Promise<string> {
 }
 
 // Rate limiting check
-export function checkRateLimit(ip: string, action: string): boolean {
+export function checkRateLimit(_ip: string, _action: string): boolean {
   // In production, use Redis or database
-  const key = `${ip}_${action}`
-  const now = Date.now()
-  
   // This is a simplified in-memory rate limiting
   // In production, implement proper rate limiting with Redis
   return true
 }
 
 // Log security events
-export function logSecurityEvent(event: string, details: any): void {
+export function logSecurityEvent(event: string, details: Record<string, unknown>): void {
   console.log(`[SECURITY] ${new Date().toISOString()} - ${event}:`, details)
   
   // In production, send to security monitoring service

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import {
-    PencilIcon,
     PhotoIcon,
     CheckIcon,
     TrashIcon,
@@ -251,7 +250,7 @@ export default function AdminPage() {
 
     const [activeTab, setActiveTab] = useState('hero')
     const [savedMessage, setSavedMessage] = useState('')
-    const [previewMode, setPreviewMode] = useState(false)
+
 
     useEffect(() => {
         // Load content from localStorage
@@ -281,7 +280,7 @@ export default function AdminPage() {
         reader.readAsDataURL(file)
     }
 
-    const updateAdventure = (id: number, field: string, value: any) => {
+    const updateAdventure = (id: number, field: string, value: string | string[]) => {
         setContent(prev => ({
             ...prev,
             adventures: prev.adventures.map(adv =>
@@ -326,7 +325,7 @@ export default function AdminPage() {
         }))
     }
 
-    const updateSkillCategory = (categoryIndex: number, field: string, value: any) => {
+    const updateSkillCategory = (categoryIndex: number, field: string, value: string | Array<{name: string; level: number}>) => {
         setContent(prev => ({
             ...prev,
             skillCategories: prev.skillCategories.map((cat, i) =>

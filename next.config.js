@@ -116,18 +116,14 @@ const nextConfig = {
 
   // Output configuration
   output: 'standalone',
-  
+
   // Disable x-powered-by header
   poweredByHeader: false,
 
   // Enable React strict mode
   reactStrictMode: true,
 
-  // Completely disable Next.js dev tools icon and indicators
-  devIndicators: {
-    buildActivity: false,
-    buildActivityPosition: 'bottom-right',
-  },
+
 
   // Disable development overlays and source maps
   productionBrowserSourceMaps: false,

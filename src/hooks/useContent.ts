@@ -47,6 +47,15 @@ interface ContentData {
     photos: string
     years: string
   }
+  socialLinks?: Array<{
+    name: string
+    url: string
+    color: string
+  }>
+  siteTitle?: string
+  siteDescription?: string
+  primaryColor?: string
+  secondaryColor?: string
 }
 
 const defaultContent: ContentData = {
@@ -184,7 +193,17 @@ const defaultContent: ContentData = {
     cities: '150+',
     photos: '500+',
     years: '8'
-  }
+  },
+  socialLinks: [
+    { name: 'Instagram', url: 'https://instagram.com/mohammed_alweishi', color: 'bg-pink-500' },
+    { name: 'YouTube', url: 'https://youtube.com/@mohammed_alweishi', color: 'bg-red-500' },
+    { name: 'Twitter', url: 'https://twitter.com/mohammed_alweishi', color: 'bg-blue-500' },
+    { name: 'LinkedIn', url: 'https://linkedin.com/in/mohammed-alweishi', color: 'bg-blue-700' }
+  ],
+  siteTitle: 'محمد الويشي - ملف المغامر الشخصي',
+  siteDescription: 'موقع شخصي لمحمد الويشي - محب المغامرات والسفر',
+  primaryColor: '#2563eb',
+  secondaryColor: '#7c3aed'
 }
 
 export function useContent() {

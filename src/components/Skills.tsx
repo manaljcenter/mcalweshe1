@@ -22,7 +22,7 @@ const Skills = () => {
   }
   // Icon mapping for dynamic content
   const getIcon = (iconName: string) => {
-    const iconMap: { [key: string]: any } = {
+    const iconMap: { [key: string]: React.ComponentType<React.SVGProps<SVGSVGElement>> } = {
       mountain: TrophyIcon,
       camera: CameraIcon,
       globe: GlobeAltIcon,
