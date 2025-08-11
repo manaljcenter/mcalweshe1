@@ -10,10 +10,10 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: {
-    default: "محمد الويشي - ملف المغامر الشخصي",
+    default: "محمد الويشي",
     template: "%s | محمد الويشي"
   },
-  description: "موقع شخصي لمحمد الويشي - مستكشف العالم ومحب المغامرات والسفر. اكتشف قصص السفر والمغامرات حول العالم مع محمد الويشي.",
+  description: "مستكشف العالم ومحب المغامرات والسفر. اكتشف قصص السفر والمغامرات حول العالم مع محمد الويشي.",
   keywords: ["محمد الويشي", "مغامرات", "سفر", "استكشاف", "رحلات", "مدونة سفر", "مصور", "مغامر"],
   authors: [{ name: "محمد الويشي" }],
   creator: "محمد الويشي",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "محمد الويشي - ملف المغامر الشخصي",
+    title: "محمد الويشي",
     description: "مستكشف العالم ومحب المغامرات والسفر. اكتشف قصص السفر والمغامرات حول العالم.",
     url: 'https://mohammed-alweishi.com',
     siteName: 'محمد الويشي',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "محمد الويشي - ملف المغامر الشخصي",
+    title: "محمد الويشي",
     description: "مستكشف العالم ومحب المغامرات والسفر",
     creator: '@mohammed_alweishi',
     images: ['/og-image.jpg'],
