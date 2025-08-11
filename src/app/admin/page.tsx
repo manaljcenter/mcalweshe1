@@ -453,19 +453,19 @@ export default function AdminPage() {
     }
 
     return (
-        <div className="min-h-screen bg-gray-50 p-4" dir="rtl">
+        <div className="min-h-screen bg-gray-50 p-4 pb-28 md:pb-0" dir="rtl">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
-                    <div className="flex justify-between items-center mb-6">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
                         <div>
                             <h1 className="text-3xl font-bold text-gray-900">لوحة تحكم المحتوى المتقدمة</h1>
                             <p className="text-gray-600 mt-2">إدارة شاملة لجميع محتويات موقعك الشخصي</p>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
                             <button
                                 onClick={handleSave}
-                                className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2 transition-colors"
+                                className="w-full sm:w-auto justify-center bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 flex items-center gap-2 transition-colors"
                             >
                                 <CheckIcon className="h-5 w-5" />
                                 حفظ التغييرات
@@ -473,14 +473,14 @@ export default function AdminPage() {
                             <a
                                 href="/"
                                 target="_blank"
-                                className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 flex items-center gap-2 transition-colors"
+                                className="w-full sm:w-auto justify-center bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 flex items-center gap-2 transition-colors text-center"
                             >
                                 <EyeIcon className="h-5 w-5" />
                                 معاينة الموقع
                             </a>
                             <button
                                 onClick={handleLogout}
-                                className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 flex items-center gap-2 transition-colors"
+                                className="w-full sm:w-auto justify-center bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 flex items-center gap-2 transition-colors"
                             >
                                 <ArrowRightOnRectangleIcon className="h-5 w-5" />
                                 تسجيل الخروج
@@ -495,13 +495,13 @@ export default function AdminPage() {
                     )}
 
                     {/* Enhanced Tabs */}
-                    <div className="border-b border-gray-200 mb-6">
-                        <nav className="flex space-x-8 space-x-reverse overflow-x-auto">
+                    <div className="sticky top-0 z-30 -mx-6 px-6 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/60 border-b border-gray-200 mb-6">
+                        <nav className="flex overflow-x-auto snap-x snap-mandatory space-x-3 space-x-reverse">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`py-3 px-4 border-b-2 font-medium text-sm flex items-center gap-2 whitespace-nowrap ${activeTab === tab.id
+                                    className={`min-h-[44px] min-w-fit py-3 px-4 border-b-2 font-medium text-sm flex items-center gap-2 whitespace-nowrap ${activeTab === tab.id
                                         ? 'border-blue-500 text-blue-600'
                                         : 'border-transparent text-gray-500 hover:text-gray-700'
                                         }`}
@@ -1312,6 +1312,27 @@ export default function AdminPage() {
                     </div>
                 </div>
             </div>
+
+            {/* Mobile bottom action bar */}
+            {isAuthenticated && (
+                <div className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-gray-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 p-3">
+                    <div className="flex gap-3">
+                        <button
+                            onClick={handleSave}
+                            className="flex-1 bg-blue-600 text-white px-4 py-3 rounded-lg text-base font-medium hover:bg-blue-700"
+                        >
+                            حفظ التغييرات
+                        </button>
+                        <a
+                            href="/"
+                            target="_blank"
+                            className="flex-1 bg-gray-900 text-white px-4 py-3 rounded-lg text-base font-medium text-center hover:bg-gray-800"
+                        >
+                            معاينة
+                        </a>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
